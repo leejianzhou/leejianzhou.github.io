@@ -101,16 +101,17 @@
 <h2 id="一、安装Hexo"><a href="#一、安装Hexo" class="headerlink" title="一、安装Hexo"></a>一、安装Hexo</h2><p>　　Hexo是基于Node.js的静态博客框架，简单、轻量，其生成的静态网页可以托管在Github 和 Heroku上。  </p>
 <h3 id="1、下载安装node-js"><a href="#1、下载安装node-js" class="headerlink" title="1、下载安装node.js"></a>1、下载安装node.js</h3><h4 id="1-1下载安装"><a href="#1-1下载安装" class="headerlink" title="1.1下载安装"></a>1.1下载安装</h4><p>　去<a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs官网</a>下载通用版。node-v8.9.4-x64.msi</p>
 <p><img src="http://p2ot2bap0.bkt.clouddn.com/201802052225/pic01.png" width="400px"></p>
-<h4 id="1-2、-检验nodejs是否安装成功，执行下面的命令："><a href="#1-2、-检验nodejs是否安装成功，执行下面的命令：" class="headerlink" title="1.2、 检验nodejs是否安装成功，执行下面的命令："></a>1.2、 检验nodejs是否安装成功，执行下面的命令：</h4><font color="red" size="3"><br>&gt;<br>&gt; C:\Users\Administrator\&gt;node -v<br>&gt; v8.9.4<br>&gt; D:\&gt;npm -v<br>&gt;5.6.0<br></font>
-
+<h4 id="1-2、-检验nodejs是否安装成功，执行下面的命令："><a href="#1-2、-检验nodejs是否安装成功，执行下面的命令：" class="headerlink" title="1.2、 检验nodejs是否安装成功，执行下面的命令："></a>1.2、 检验nodejs是否安装成功，执行下面的命令：</h4><blockquote>
+<p>C:\Users\Administrator\&gt;node -v<br>v8.9.4<br>D:\&gt;npm -v<br>5.6.0</p>
+</blockquote>
 <h3 id="2、安装Git"><a href="#2、安装Git" class="headerlink" title="2、安装Git"></a>2、安装Git</h3><p>Git 是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
 <h4 id="2-1-安装"><a href="#2-1-安装" class="headerlink" title="2.1 安装"></a>2.1 安装</h4><p>在 Git 官网：<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a> 下载安装包 Git-2.15.1.2-64-bit.exe</p>
 <p><img src="http://p2ot2bap0.bkt.clouddn.com/201802052225/pic02.png" width="400px">  </p>
 <p>安装和配置好Git环境，成功安装的象征是，鼠标右键菜单中出现如下两个选项<br><img src="http://p2ot2bap0.bkt.clouddn.com/201802052225/pic03.png" width="400px">  </p>
 <p>【注】一般出于安全考虑，只有在 Git Bash Here中才能进行Git的相关操作。如果需要在cmd命令行中调用Git，就要配置电脑的环境变量Path，或者在安装时选择“use Git from the Windows Command Prompt”。</p>
-<font color="red" size="3"><br>&gt;  D:>git –version<br>&gt;  git version 2.15.1.windows.2<br></font>
-
-
+<blockquote>
+<p> D:>git –version<br> git version 2.15.1.windows.2  </p>
+</blockquote>
 <h3 id="3、安装hexo"><a href="#3、安装hexo" class="headerlink" title="3、安装hexo"></a>3、安装hexo</h3><h4 id="3-1-安装"><a href="#3-1-安装" class="headerlink" title="3.1 安装"></a>3.1 安装</h4><p>使用npm完成hexo的安装  </p>
 <p>D:>npm install hexo-cli -g  </p>
 <pre><code>C:\Users\Administrator\AppData\Roaming\npm\hexo -&gt; C:\Users\Administrator\AppData\Roaming\npm\node_modules\hexo-cli\bin\hexo  
@@ -119,9 +120,7 @@ npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
 
  + hexo-cli@1.0.4  
 updated 1 package in 13.92s
-</code></pre><h4 id="3-2-查看Hexo的版本"><a href="#3-2-查看Hexo的版本" class="headerlink" title="3.2 查看Hexo的版本"></a>3.2 查看Hexo的版本</h4><blockquote>
-<p>D:>hexo version<br>hexo: 3.5.0<br>hexo-cli: 1.0.4<br>os: Windows_NT 6.1.7601 win32 x64<br>http_parser: 2.7.0<br>node: 8.9.4<br>v8: 6.1.534.50<br>uv: 1.15.0<br>zlib: 1.2.11<br>ares: 1.10.1-DEV<br>modules: 57<br>nghttp2: 1.25.0<br>openssl: 1.0.2n<br>icu: 59.1<br>unicode: 9.0<br>cldr: 31.0.1<br>tz: 2017b  </p>
-</blockquote>
+</code></pre><h4 id="3-2-查看Hexo的版本"><a href="#3-2-查看Hexo的版本" class="headerlink" title="3.2 查看Hexo的版本"></a>3.2 查看Hexo的版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt; D:\&gt;hexo version  </span><br><span class="line">&gt; hexo: 3.5.0</span><br><span class="line">&gt; hexo-cli: 1.0.4  </span><br><span class="line">&gt; os: Windows_NT 6.1.7601 win32 x64  </span><br><span class="line">&gt; http_parser: 2.7.0  </span><br><span class="line">&gt; node: 8.9.4  </span><br><span class="line">&gt; v8: 6.1.534.50  </span><br><span class="line">&gt; uv: 1.15.0  </span><br><span class="line">&gt; zlib: 1.2.11  </span><br><span class="line">&gt; ares: 1.10.1-DEV  </span><br><span class="line">&gt; modules: 57  </span><br><span class="line">&gt; nghttp2: 1.25.0  </span><br><span class="line">&gt; openssl: 1.0.2n  </span><br><span class="line">&gt; icu: 59.1  </span><br><span class="line">&gt; unicode: 9.0  </span><br><span class="line">&gt; cldr: 31.0.1  </span><br><span class="line">&gt; tz: 2017b</span><br></pre></td></tr></table></figure>
 <h2 id="二、创建Github仓库"><a href="#二、创建Github仓库" class="headerlink" title="二、创建Github仓库"></a>二、创建Github仓库</h2><p>GitHub 是一个代码托管平台，提供版本控制功能。除此以外，它还提供一个免费开源Github Pages空间，利用这个空间可以绑定自己的域名，搭建轻量级的博客系统。</p>
 <ul>
 <li><a href="https://github.com/" target="_blank" rel="noopener">Github官网</a>：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></li>
