@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Hexo," />
+
+
+<meta name="description" content="一、官方文档 使用 hexo new [layout] &amp;lt;title&amp;gt; 命令生成一篇文章。若 layout 没有指明的话，hexo会使用“_config.yml”中 default_layout 的默认配置（post）。若title包含空格，要用引号括起来。">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo生成一篇新文章">
+<meta property="og:url" content="http://leejianzhou.cn/2018/02/14/Hexo生成一篇新文章--20180214/index.html">
+<meta property="og:site_name" content="神洲6656">
+<meta property="og:description" content="一、官方文档 使用 hexo new [layout] &amp;lt;title&amp;gt; 命令生成一篇文章。若 layout 没有指明的话，hexo会使用“_config.yml”中 default_layout 的默认配置（post）。若title包含空格，要用引号括起来。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic01.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic02.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic03.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic04.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic05.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic06.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic07.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic08.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic09.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic10.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic11.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic12.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic13.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic14.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic15.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic16.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic17.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic18.png">
+<meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic19.png">
+<meta property="og:updated_time" content="2018-02-14T08:51:00.999Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo生成一篇新文章">
+<meta name="twitter:description" content="一、官方文档 使用 hexo new [layout] &amp;lt;title&amp;gt; 命令生成一篇文章。若 layout 没有指明的话，hexo会使用“_config.yml”中 default_layout 的默认配置（post）。若title包含空格，要用引号括起来。">
+<meta name="twitter:image" content="http://blog2018.nos-eastchina1.126.net/201802141650/pic01.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://leejianzhou.cn/2018/02/14/Hexo生成一篇新文章--20180214/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Hexo生成一篇新文章 | 神洲6656</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?89920f7b4f69c70fb85c179b7689f3cc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">神洲6656</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">山高人为峰，海阔心无界！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leejianzhou.cn/2018/02/14/Hexo生成一篇新文章--20180214/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="神洲6656">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="神洲6656">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo生成一篇新文章</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-14T16:50:00+08:00">2018-02-14</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、官方文档"><a href="#一、官方文档" class="headerlink" title="一、官方文档"></a>一、官方文档</h2><p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic01.png" width="600px"></p>
+<p>使用 <code>hexo new [layout] &lt;title&gt;</code> 命令生成一篇文章。若 <code>layout</code> 没有指明的话，hexo会使用“_config.yml”中 <code>default_layout</code> 的默认配置（post）。若title包含空格，要用引号括起来。<br><a id="more"></a></p>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic02.png" width="400px"></p>
+<h2 id="二、layout三个选项"><a href="#二、layout三个选项" class="headerlink" title="二、layout三个选项"></a>二、<code>layout</code>三个选项</h2><p>Hexo提供了3种布局，post、page和draft，路径分别为：source/_posts、source/xxx、source/_draft，默认布局是post。<br>这3种布局来源于scaffolds（模板）文件夹的三个md文件，如下图：</p>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic03.png" width="400px">  </p>
+<p>【注】新建文章时，Hexo 也可根据 scaffolds 文件夹内相对应的文件来建立文件，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new photo &quot;My Gallery&quot;</span><br></pre></td></tr></table></figure></p>
+<p>在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章.</p>
+<h2 id="三、使用默认布局post，发表文章"><a href="#三、使用默认布局post，发表文章" class="headerlink" title="三、使用默认布局post，发表文章"></a>三、使用默认布局post，发表文章</h2><h3 id="1、执行命令，生成md文件"><a href="#1、执行命令，生成md文件" class="headerlink" title="1、执行命令，生成md文件"></a>1、执行命令，生成md文件</h3><p>执行<code>hexo new post myBlog</code>  ，提示信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post myBlog</span><br><span class="line">INFO  Created: D:\www\leejianzhou.github.io\source\_posts\myBlog.md</span><br><span class="line">Administrator@CW-001 MINGW32 /d/www/leejianzhou.github.io</span><br></pre></td></tr></table></figure>
+<p>上面的命令在 <code>source\_post</code> 文件夹中生成了一个“myBlog.md”文件。</p>
+<h3 id="2、编辑“myBlog-md”文件"><a href="#2、编辑“myBlog-md”文件" class="headerlink" title="2、编辑“myBlog.md”文件"></a>2、编辑“myBlog.md”文件</h3><p>使用Markdown编辑器打开生成的“myBlog.md”文件。</p>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic04.png" width="300px"></p>
+<pre><code>title：文章页面上的显示标题，可以修改，不会出现在URL中  
+date：文件创建日期时间，可以修改
+tags: 文章的标签，可空，多标签请用格式[tag1,tag2,tag3]
+</code></pre><p>上下两套横线之间的内容，在未来的文章之中不会出现。<br>编写这一部分内容时要注意，两套横线不要删除，冒号前的内容不要修改，冒号后面跟一个空格。<br>文章的正文支持Markdown语法，下面是这个文件编辑修改后的内容：<br>.<br><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic05.png" width="300px"></p>
+<ul>
+<li>执行“hexo generate”命令，Hexo 监视网站内的文件变动并立即重新生成静态文件。</li>
+<li>执行 “hexo server” 启动本地服务器，如下图。</li>
+</ul>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic06.png" width="600px"></p>
+<ul>
+<li>打开浏览器，登录“<a href="http://localhost:4000”就可看到本地的博客。" target="_blank" rel="noopener">http://localhost:4000”就可看到本地的博客。</a></li>
+</ul>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic07.png" width="600px"></p>
+<h2 id="四、使用draft布局发表文章"><a href="#四、使用draft布局发表文章" class="headerlink" title="四、使用draft布局发表文章"></a>四、使用draft布局发表文章</h2><p>使用这种布局生成的md文件，将放到<code>source/_drafts</code>文件夹中，这个md文件不被显示在网站的页面，将做为draft（草稿）保存起来。  </p>
+<h3 id="1、生成草稿文件"><a href="#1、生成草稿文件" class="headerlink" title="1、生成草稿文件"></a>1、生成草稿文件</h3><p>下面的<code>hexo new draft &quot;草稿--draft&quot;</code>命令，会在source/_drafts目录下生成一个“草稿-draft.md”文件。  </p>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic08.png" width="600px"><br>.<br><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic09.png" width="400px">  </p>
+<h3 id="2、强行预览草稿文件"><a href="#2、强行预览草稿文件" class="headerlink" title="2、强行预览草稿文件"></a>2、强行预览草稿文件</h3><p>预览草稿文件，有以下二种方式：</p>
+<ul>
+<li>更改配置文件_config.yml： <code>render_drafts: true</code></li>
+<li>以如下方式启动本地服务器：<code>hexo server --drafts</code>  </li>
+</ul>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic10.png" width="600px"></p>
+<h3 id="3、发布草稿文件"><a href="#3、发布草稿文件" class="headerlink" title="3、发布草稿文件"></a>3、发布草稿文件</h3><p>使用<code>hexo publish [layout] &lt;filename&gt;</code>命令可以把草稿变成文章，或者页面，如下所示：  </p>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic11.png" width="600px"><br>执行命令后， “草稿-draft.md”文件被发布到了_posts文件夹中。</p>
+<h2 id="五、使用page布局，创建新的路径"><a href="#五、使用page布局，创建新的路径" class="headerlink" title="五、使用page布局，创建新的路径"></a>五、使用page布局，创建新的路径</h2><h3 id="1、执行hexo-new-page-quot-about-quot-命令，如下："><a href="#1、执行hexo-new-page-quot-about-quot-命令，如下：" class="headerlink" title="1、执行hexo new page &quot;about&quot;命令，如下："></a>1、执行<code>hexo new page &quot;about&quot;</code>命令，如下：</h3><p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic12.png" width="600px"></p>
+<p>这个命令将在source文件夹下建立一个“about”文件夹，里面会有一个index.md的文件。</p>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic13.png" width="400px"><br>.<br><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic14.png" width="400px"></p>
+<h3 id="2、编辑index-md文件"><a href="#2、编辑index-md文件" class="headerlink" title="2、编辑index.md文件"></a>2、编辑index.md文件</h3><p>使用Markdown编辑器打开生成的“index.md”文件，随便添加了点内容。  </p>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic15.png" width="400px"></p>
+<h3 id="3、将新路径的链接添加到页面中"><a href="#3、将新路径的链接添加到页面中" class="headerlink" title="3、将新路径的链接添加到页面中"></a>3、将新路径的链接添加到页面中</h3><p>打开当前主题中的配置文件<code>themes/&lt;theme_name&gt;/_config.yml</code></p>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic16.png" width="400px"><br>在menu:项中添加 <code>关于: /about</code>，保存退出。<br>.<br><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic17.png" width="200px"></p>
+<p>生成页面，打开博客后，在页面中就看到了“关于”链接。</p>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic18.png" width="400px"></p>
+<p>单击“关于”链接，将打开这个页面。</p>
+<p><img src="http://blog2018.nos-eastchina1.126.net/201802141650/pic19.png" width="400px"></p>
+<hr>
+<p>【发布时间】: 201802141650<br>【版        本】: V1.0<br>【修改时间】: 20180214</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="神洲6656 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/14/Hexo中Next主题的配置--20180214/" rel="next" title="Hexo中Next主题的配置">
+                <i class="fa fa-chevron-left"></i> Hexo中Next主题的配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="神洲6656" />
+            
+              <p class="site-author-name" itemprop="name">神洲6656</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.jianshu.com/u/71a2f1382d81" target="_blank" title="简书"><i class="fa fa-fw fa-globe"></i>简书</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.plyizhong.cn/" title="蓬莱一中" target="_blank">蓬莱一中</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、官方文档"><span class="nav-number">1.</span> <span class="nav-text">一、官方文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、layout三个选项"><span class="nav-number">2.</span> <span class="nav-text">二、layout三个选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、使用默认布局post，发表文章"><span class="nav-number">3.</span> <span class="nav-text">三、使用默认布局post，发表文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、执行命令，生成md文件"><span class="nav-number">3.1.</span> <span class="nav-text">1、执行命令，生成md文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、编辑“myBlog-md”文件"><span class="nav-number">3.2.</span> <span class="nav-text">2、编辑“myBlog.md”文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、使用draft布局发表文章"><span class="nav-number">4.</span> <span class="nav-text">四、使用draft布局发表文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、生成草稿文件"><span class="nav-number">4.1.</span> <span class="nav-text">1、生成草稿文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、强行预览草稿文件"><span class="nav-number">4.2.</span> <span class="nav-text">2、强行预览草稿文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、发布草稿文件"><span class="nav-number">4.3.</span> <span class="nav-text">3、发布草稿文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、使用page布局，创建新的路径"><span class="nav-number">5.</span> <span class="nav-text">五、使用page布局，创建新的路径</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、执行hexo-new-page-quot-about-quot-命令，如下："><span class="nav-number">5.1.</span> <span class="nav-text">1、执行hexo new page &quot;about&quot;命令，如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、编辑index-md文件"><span class="nav-number">5.2.</span> <span class="nav-text">2、编辑index.md文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、将新路径的链接添加到页面中"><span class="nav-number">5.3.</span> <span class="nav-text">3、将新路径的链接添加到页面中</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">神洲6656</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
