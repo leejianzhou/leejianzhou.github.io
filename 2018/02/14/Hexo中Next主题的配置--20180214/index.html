@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141600/pic02.png">
 <meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141600/pic03.png">
 <meta property="og:image" content="http://blog2018.nos-eastchina1.126.net/201802141600/pic04.png">
-<meta property="og:updated_time" content="2018-02-15T00:17:44.068Z">
+<meta property="og:updated_time" content="2018-02-21T22:50:10.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo中Next主题的配置">
 <meta name="twitter:description" content="一、主题官网网址：https://github.com/theme-next/hexo-theme-next   中文说明文档 1、下载最新 master 分支">
@@ -436,14 +436,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure>
 <p>在菜单中添加链接。编辑主题的 _config.yml ，将 menu 中的 categories: /categories 注释去掉，如下:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br></pre></td></tr></table></figure>
-<p>【注】文章中设置多级目标实例：<br><div class="note info"><hr>
-<p>title: 使用 IntelliJ IDEA 编写Markdown格式文件<br>date: 2018-02-11<br>categories: </p>
-<ul>
-<li>笔记</li>
-<li>Markdown</li>
-<li>t<br>tags: [Markdown]</li>
-</ul>
-<hr></div></p>
+<p>【注】文章中设置多级目标实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 使用 IntelliJ IDEA 编写Markdown格式文件</span><br><span class="line">date: 2018-02-11</span><br><span class="line">categories: </span><br><span class="line">- 笔记</span><br><span class="line">- Markdown</span><br><span class="line">- t</span><br><span class="line">tags: [Markdown]</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
 <h3 id="4、创建标签云页面"><a href="#4、创建标签云页面" class="headerlink" title="4、创建标签云页面"></a>4、创建标签云页面</h3><p>添加一个标签云页面，并在菜单中显示页面链接。</p>
 <p>新建一个页面，命名为 tags 。命令如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;tags&quot;</span><br></pre></td></tr></table></figure>
@@ -501,11 +494,12 @@
 <h3 id="16、修改文章内链接文本样式"><a href="#16、修改文章内链接文本样式" class="headerlink" title="16、修改文章内链接文本样式"></a>16、修改文章内链接文本样式</h3><p>将链接文本设置为蓝色，鼠标划过时文字颜色加深，并显示下划线。<br>修改文件 <code>themes\next\source\css\_common\components\post\post.styl</code> ，添加如下 css 样式，：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 文章内链接文本样式</span><br><span class="line">.post-body p a&#123;</span><br><span class="line">  color: #0593d3;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid #0593d3;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: #fc6423;</span><br><span class="line">    border-bottom: none;</span><br><span class="line">    border-bottom: 1px solid #fc6423;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>选择<code>.post-body</code> 是为了不影响标题，选择<code>p</code>是为了不影响首页 “阅读全文” 的显示样式。</p>
-<h3 id="17、开启本地搜索"><a href="#17、开启本地搜索" class="headerlink" title="17、开启本地搜索"></a>17、开启本地搜索</h3><p>添加百度/谷歌/本地 自定义站点内容搜索</p>
+<h3 id="17、开启本地搜索"><a href="#17、开启本地搜索" class="headerlink" title="17、开启本地搜索"></a>17、开启本地搜索</h3><p>添加本地 自定义站点内容搜索</p>
+<p>安装 <code>hexo-generator-search</code>，在站点的根目录下执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure></p>
 <p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p>
 <div class="note info"><p>npm install hexo-generator-searchdb –save</p></div>
 <p>编辑 站点配置文件，新增以下内容到任意位置：</p>
-<div class="note success"><p>search:<br>  path: search.xml<br>  field: post<br>  format: html<br>  limit: 10000</p></div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
 <p>编辑 主题配置文件，启用本地搜索功能：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
 <h3 id="18、开启向百度搜索手动推送内容（百度无法抓取github内容，没用）"><a href="#18、开启向百度搜索手动推送内容（百度无法抓取github内容，没用）" class="headerlink" title="18、开启向百度搜索手动推送内容（百度无法抓取github内容，没用）"></a>18、开启向百度搜索手动推送内容（百度无法抓取github内容，没用）</h3><p>添加站点地图<br>先要安装插件<br>Git Bash输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure></p>
@@ -663,7 +657,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
