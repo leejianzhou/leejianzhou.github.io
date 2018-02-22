@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo博客同时托管到 Github 和 Coding]]></title>
+    <url>%2F2018%2F02%2F22%2FHexo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%97%B6%E6%89%98%E7%AE%A1%E5%88%B0%20github%20%E5%92%8C%20coding--20180222%2F</url>
+    <content type="text"><![CDATA[使用Hexo在Github搭建博客，可以拥有1GB空间，但无法被百度抓取，而且国内访问速度较慢。基于这几点，研究了将Hexo博客同时托管到Github 和 coding的方案，现整理如下。 【注】以下内容为托管到Coding的过程，Github部分请参考“基于Github，使用Hexo搭建个人博客” 一、注册 Coding账号并配置 登录Coding网方网站注册，注册时所用邮箱要与Github邮箱一致。 二、添加新项目注册之后进入主页，点击所有项目，点击+，项目名为你的用户名，公开项目，启用Readme.md。如下图： 三、开启Coding Pages 服务进入新创建的项目，点击Pages 服务，选择部署来源为”master分析”，单击保存。 四、配置SSH与Git将本地计算机中，已经生成的SSH key 添加到Coding中。 1、找到存储本地SSH keys的文件如下, Administrator替换成自己计算机的用户名：C:\Users\Administrator.ssh\id_rsa.pub. 2、将文件中的内容复制，粘贴到Coding的SSH公钥中公钥名称自定，勾选“永久有效”，如下图。 3、测试与Coding的连接输入如下的命令，测验连接是否成功。 123$ ssh -T git@git.coding.netCoding 提示: Hello leejianzhou, You&apos;ve connected to Coding.net via SSH. This is a personal key.leejianzhou，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥 五、个人域名绑定1、添加新的域名解析进入域名服务商提供的域名管理面板，选中欲绑定的域名，进入解析设置，点击『添加解析』，添加 CNAME 记录，点击『确定』。静态 Pages，设置域名的 CNAME 记录为 pages.coding.me 2、在『Pages 服务』中绑定域名在『Pages 服务』设置页中绑定自定义域名，如果配置 DNS 解析时域名前缀为 www，绑定自定义域名需要填写 www 前缀。 六、上传博客到Coding1、修改_config.yml文件123456deploy: type: git repository: github: git@github.com:leejianzhou/leejianzhou.github.io.git coding: git@git.coding.net:leejianzhoug/leejianzhoug.git branch: master coding: 后面的内容，可以到项目中查看，如下图： 2、生成并部署12hexo g #生成静态网页hexo d #开始部署 【发布时间】: 201802222006【版 本】: V1.0【修改时间】: 20180222]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Coding</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo的Next主题私有标签]]></title>
     <url>%2F2018%2F02%2F22%2FHexo%E7%9A%84Next%E4%B8%BB%E9%A2%98%E7%A7%81%E6%9C%89%E6%A0%87%E7%AD%BE--20180222%2F</url>
     <content type="text"><![CDATA[「标签」(Tag Plugin) 是 Hexo 提供的一种快速生成特定内容的方式。 例如，在标准 Markdown 语法中，我们无法指定图片的大小。这种情景，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 Hexo 官网。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。 以下标签便是 NexT 主题当前提供的标签。 文本居中的引用此标签将生成一个带上下分割线的引用，同时引用内文本将自动居中。 文本居中时，多行文本若长度不等，视觉上会显得不对称，因此建议在引用单行文本的场景下使用。 例如作为文章开篇引用 或者 结束语之前的总结引用。 使用方式 HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。 标签方式：使用 centerquote 或者 简写 cq。 此标签要求 NexT 的版本在 0.4.5 或以上。 若你正在使用的版本比较低，可以选择使用 HTML 方式 1&#123;% cq %&#125; blah blah blah &#123;% endcq %&#125; 效果示例： 人的一切痛苦，本质上都是对自己的无能的愤怒。王小波 Bootstrap Callout这些样式出现在 Bootstrap 的官方文档中。 使用方式 1&#123;% note class_name %&#125; Content (md partial supported) &#123;% endnote %&#125; 其中，class_name 可以是以下列表中的一个值： default primary success info warning danger 效果示例: Content of default bs-callout Content of primary bs-callout Content of success bs-callout Content of info bs-callout Content of warning bs-callout Content of danger bs-callout 【发布时间】: 201802220706【版 本】: V1.0【修改时间】: 20180222]]></content>
